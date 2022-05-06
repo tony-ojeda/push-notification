@@ -1,26 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AppComponent } from './app.component';
 import { MessagingService } from './shared/messaging.service';
 import { environment } from '../environments/environment';
 import { AsyncPipe } from '../../node_modules/@angular/common';
+import { FirebaseComponent } from './firebase/firebase.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirebaseComponent,
+    PageNotFoundComponent,
+    VideoconsultationComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     AngularFireMessagingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.configFirebase),
   ],
   providers: [MessagingService, AsyncPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

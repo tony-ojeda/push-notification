@@ -1,0 +1,46 @@
+.videoconsultation {
+    background-color: #fff;
+    height: 100vh;
+
+    &__title,
+    &__action {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__action {
+
+        .custom-load-btn-conclude-video-consultation {
+            &::after {
+                width: 32px;
+                height: 32px;
+                top: 73%;
+                left: 55%;
+            }
+        }
+
+        .custom-btn-concluded {
+            height: 40px;
+            line-height: 16px;
+            width: 186px;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__content {
+        width: 100%;;
+        height: calc(100vh - 120px);
+        background: #000e;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
