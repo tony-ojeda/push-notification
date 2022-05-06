@@ -8,7 +8,7 @@ const appRoutes: Routes = [
   { path: 'videoconsultation/:linksala', component: VideoconsultationComponent },
   { path: 'firebase', component: FirebaseComponent },
   { path: '',
-    redirectTo: 'firebase',
+    redirectTo: 'videoconsultation/:linksala',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
